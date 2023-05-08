@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="card.css">
+    <link rel="shortcut icon" href="pic/bulb.png" type="image/x-icon">
+</head>
+
+<body>
+
+
+
+    <header>
+        <div class="nav">
+            <div class="logo">
+                <img src="pic/bulb2.png">
+                <span>FURNI</span>
+            </div>
+
+
+            <div class="search">
+                <input type="text" placeholder="🔍 search  for the product" id="search-item" onkeyup="search()">
+            </div>
+            <div class="hamburger">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+            <nav id="hi">
+                <ul class="nav-item">
+                    <li>Home</li>
+                    <li>About </li>
+                    <li><a class="shopping"><img src="https://img.icons8.com/color/32/null/shopping-cart--v1.png" />
+                            <span class="quantity">0</span></a></li>
+                    <li>About</li>
+
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+
+
+    <div class="card">
+        <h1>Your Cart</h1>
+        <ul class="listCard" id="listCard">
+        </ul>
+        <div class="checkOut">
+            <div class="total" onclick="buy()">0</div>
+            <div class="closeShopping">Close</div>
+        </div>
+        <div class="sagi"></div>
+
+    </div>
+
+
+
+
+
+    <div class="link">
+        <a href="index.html">Home </a>
+
+        <select id="sort" class="sort active">
+            <option value="all" id="all">All</option>
+            <option value="chair-couch" id="chair">chair & sofa</option>
+            <option value="bed" id="bed">bed</option>
+            <option value="table" id="lamp">table</option>
+            <option value="combo" id="combo-pack">combo-pack</option>
+            <option value="lamp " id="lamp">lamp</option>
+        </select>
+    </div>
+
+
+    <div class="image-continer product-list" id="product-list">
+        <div class="cart-prt ">
+            <div class="cart product" id="item1">
+                <img src="images/sofa 2.jfif" data-filter="sofa">
+
+
+                <h2>Sofa
+
+                    <p>₹ 355</p>
+                    <a onclick="AddToCart('sofa',355,'images/sofa 2.jfif',1)"><img
+                            src="pic/icons8-shopping-cart-24.png"></a>
+
+                </h2>
+
+            </div>
+            <div class="rating-button">
+                <button onclick="hi(355)">Buy Now</button>
+
+                <button class="ytt">rating⭐⭐</button>
+
+            </div>
+        </div>
+
+
+        <div class="cart-prt">
+
+            <div class="cart product">
+                <img src="images/sofa.avif" data-filter="chair">
+                <h2>Sofa
+                    <p id="rs">₹355</p>
+                    <a onclick="AddToCart('sofa',355,'images/sofa.avif',2)"><img
+                            src="pic/icons8-shopping-cart-24.png"></a>
+
+                </h2>
+
+
+            </div>
+            <div class="rating-button">
+                <button href="signup.html" onclick="hi(355)">Buy Now</button>
+                <button class="ytt">rating⭐⭐</button>
+
+            </div>
+        </div>
+
+        <div class="cart-prt">
+            <div class="cart product">
+                <img src="pic/bern.jpg" data-filter="combo-pack">
+                <h2>combo-pack
+                    <p id="rs"> ₹22355</p>
+                    <a onclick="AddToCart('combo-pack',22355,'pic/bern.jpg',3)"><img
+                            src="pic/icons8-shopping-cart-24.png"></a>
+                </h2>
+
+            </div>
+            <div class="rating-button">
+                <button href="signup.html" onclick="hi(22355)">Buy Now</button>
+                <button class="ytt">rating⭐⭐⭐⭐</button>
+            </div>
+        </div>
+
+        <div class="cart-prt">
+            <div class="cart product">
+                <img src="pic/furn2.jpg" data-filter="chair">
+                <h2>chair
+                    <p>₹855</p>
+                    <a onclick="AddToCart('chair',855,'pic/furn2.jpg',4)"><img
+                            src="pic/icons8-shopping-cart-24.png"></a>
+                </h2>
+            </div>
+            <div class="rating-button">
+                <button href="signup.html" onclick="hi(855)">Buy Now</button>
+                <button class="ytt">rating⭐⭐⭐⭐</button>
+            </div>
+        </div>
+
+
+        <div class="cart-prt">
+            <div class="cart product">
+                <img src="pic/furn3.jpg" data-filter="chair">
+                <h2>chair
+                    <p>₹755</p>
+                    <a onclick="AddToCart('chair',755,'pic/furn3.jpg',5)"><img
+                            src="pic/icons8-shopping-cart-24.png"></a>
+
+                </h2>
+            </div>
+            <div class="rating-button">
+                <button href="signup.html" onclick="hi(755)">Buy Now</button>
+                <button class="ytt">rating⭐⭐</button>
+            </div>
+        </div>
+
+        <div class="cart-prt">
+            <div class="cart product">
+                <img src="pic/furn4.jpg" data-filter="lamp">
+                <h2>lamp
+                    <p>₹355</p>
+                    <a onclick="AddToCart('lamp',355,'pic/furn4.jpg',6)"><img src="pic/icons8-shopping-cart-24.png"></a>
+
+                </h2>
+            </div>
+            <div class="rating-button">
+                <button href="signup.html" onclick="hi(355)">Buy Now</button>
+                <button class="ytt">rating⭐⭐⭐⭐</button>
+            </div>
+        </div>
+
+        <div class="cart-prt">
+            <div class="cart product">
+                <img src="pic/furn5.jpg" data-filter="sofa">
+                <h2>Sofa
+                    <p>₹3355</p>
+                    <a onclick="AddToCart('sofa',3355,'pic/furn5.jpg',7)"><img
+                            src="pic/icons8-shopping-cart-24.png"></a>
+
+                </h2>
+            </div>
+            <div class="rating-button">
+                <button href="signup.html" onclick="hi(3355)">Buy Now</button>
+                <button class="ytt">rating⭐⭐⭐⭐</button>
+            </div>
+        </div>
+
+        <div class="cart-prt">
+            <div class="cart product">
+                <img src="pic/furn6.jpg" data-filter="table">
+                <h2>table
+                    <p>₹3255</p>
+                    <a onclick="AddToCart('table',3255,'pic/furn6.jpg',8)"><img
+                            src="pic/icons8-shopping-cart-24.png"></a>
+
+                </h2>
+            </div>
+            <div class="rating-button">
+                <button href="signup.html" onclick="hi(3255)">Buy Now</button>
+                <button class="ytt">rating⭐⭐⭐⭐</button>
+            </div>
+        </div>
+
+        <div class="cart-prt">
+            <div class="cart product">
+                <img src="images/bed 2.jfif" data-filter="bed">
+                <h2>bed
+                    <p>955</p>
+                    <a onclick="AddToCart('bed',955,'images/bed 2.jfif',9)"><img
+                            src="pic/icons8-shopping-cart-24.png"></a>
+
+                </h2>
+            </div>
+            <div class="rating-button">
+                <button href="signup.html" onclick="hi(955)">Buy Now</button>
+                <button class="ytt">rating⭐⭐⭐</button>
+            </div>
+        </div>
+
+        <div class="cart-prt">
+            <div class="cart product">
+                <img src="images/bed.jfif" data-filter="bed">
+                <h2>bed
+                    <p>₹1355</p>
+                    <a onclick="AddToCart('bed',1355,'images/bed.jfif',10)"><img
+                            src="pic/icons8-shopping-cart-24.png"></a>
+
+                </h2>
+            </div>
+            <div class="rating-button">
+                <button href="signup.html" onclick="hi(1355)">Buy Now</button>
+                <button class="ytt">rating⭐⭐⭐⭐</button>
+            </div>
+        </div>
+
+        <div class="cart-prt">
+            <div class="cart product">
+                <img src="images/chair image.jfif" data-filter="chair">
+                <h2>chair
+                    <p>₹355</p>
+                    <a onclick="AddToCart('chair',355,'images/chair image.jfif',11)"><img
+                            src="pic/icons8-shopping-cart-24.png"></a>
+                </h2>
+            </div>
+            <div class="rating-button">
+                <button href="signup.html" onclick="hi(355)">Buy Now</button>
+                <button class="ytt">rating⭐⭐</button>
+
+            </div>
+        </div>
+
+        <div class="cart-prt">
+            <div class="cart product">
+                <img src="images/dining sofa set.jfif" data-filter="combo-pack">
+                <h2>combo-pack
+                    <p>₹2355</p>
+                    <a onclick="AddToCart('combo-pack',2355,'images/dining sofa set.jfif',12)"><img
+                            src="pic/icons8-shopping-cart-24.png"></a>
+
+                </h2>
+            </div>
+            <div class="rating-button">
+                <button href="signup.html" onclick="hi(2355)">Buy Now</button>
+                <button class="ytt">rating⭐⭐</button>
+            </div>
+        </div>
+
+        <div class="cart-prt">
+            <div class="cart product">
+                <img src="images/bookshelf3.jfif" data-filter="table">
+                <h2>bookshelf3
+                    <p>₹4355</p>
+                    <a onclick="AddToCart('bookshelf',4355,'images/bookshelf3.jfif',13)"><img
+                            src="pic/icons8-shopping-cart-24.png"></a>
+                </h2>
+            </div>
+            <div class="rating-button">
+                <button href="signup.html" onclick="hi(4355)">Buy Now</button>
+                <button class="ytt">rating⭐⭐⭐⭐</button>
+            </div>
+        </div>
+
+        <div class="cart-prt">
+            <div class="cart product">
+                <img src="images/dressingtable.avif" data-filter="chair">
+                <h2>chair
+                    <p>₹2555</p>
+                    <a onclick="AddToCart('chair',2555,'images/dressingtable.avif',14)"><img
+                            src="pic/icons8-shopping-cart-24.png"></a>
+                </h2>
+            </div>
+            <div class="rating-button">
+                <button href="signup.html" onclick="hi(2555)">Buy Now</button>
+                <button class="ytt">rating⭐⭐⭐</button>
+            </div>
+        </div>
+
+        <div class="cart-prt">
+            <div class="cart product">
+                <img src="images/sofa 2.jfif" data-filter="sofa">
+                <h2>sofa
+                    <p>₹1355</p>
+                    <a onclick="AddToCart('sofa',1355,'images/sofa 2.jfif',15)"><img
+                            src="pic/icons8-shopping-cart-24.png"></a>
+                </h2>
+            </div>
+            <div class="rating-button">
+                <button href="signup.html" onclick="hi(1355)">Buy Now</button>
+                <button class="ytt">rating⭐⭐⭐⭐</button>
+            </div>
+
+        </div>
+
+        <div class="cart-prt">
+            <div class="cart product">
+                <img src="images/sofa1.jfif" data-filter="sofa">
+                <h2>Sofa
+                    <p>₹555</p>
+                    <a onclick="AddToCart('sofa',555,'images/sofa1.jfif',16)"><img
+                            src="pic/icons8-shopping-cart-24.png"></a>
+                </h2>
+            </div>
+            <div class="rating-button">
+                <button href="signup.html" onclick="hi(555)">Buy Now</button>
+                <button class="ytt">rating⭐</button>
+            </div>
+        </div>
+
+        <div class="cart-prt">
+
+            <div class="cart product">
+                <img src="images/lamp.avif" data-filter="lamp">
+                <h2>lamp
+                    <p>₹699</p>
+                    <a onclick="AddToCart('lamp',699,'images/lamp.avif',17)"><img
+                            src="pic/icons8-shopping-cart-24.png"></a>
+                </h2>
+            </div>
+            <div class="rating-button">
+                <button href="signup.html" onclick="hi(699)">Buy Now</button>
+                <button class="ytt">rating⭐⭐⭐⭐</button>
+            </div>
+        </div>
+
+        <div class="cart-prt">
+
+            <div class="cart product">
+                <img src="images/chair.avif" data-filter="chair">
+                <h2>chair
+                    <p>₹3355</p>
+                    <a onclick="AddToCart('chair',3355,'images/chair.avif',18)"><img
+                            src="pic/icons8-shopping-cart-24.png"></a>
+                </h2>
+            </div>
+
+            <div class="rating-button">
+                <button href="signup.html" onclick="hi(3355)">Buy Now</button>
+                <button class="ytt">rating⭐⭐⭐⭐</button>
+            </div>
+        </div>
+
+        <div class="cart-prt">
+
+            <div class="cart product">
+                <img src="images/sofa.avif" data-filter="combo-pack">
+                <h2>combo-pack
+                    <p>₹355</p>
+                    <a onclick="AddToCart('combo-pack',355,'images/sofa.avif',19)"><img
+                            src="pic/icons8-shopping-cart-24.png"></a>
+
+                </h2>
+            </div>
+            <div class="rating-button">
+                <button href="signup.html" onclick="hi(355)">Buy Now</button>
+                <button class="ytt">rating⭐⭐⭐⭐</button>
+            </div>
+        </div>
+
+        <div class="cart-prt">
+
+            <div class="cart product">
+                <img src="images/chair combo.avif" data-filter="combo-pack">
+                <h2>combo-pack
+                    <p>₹755</p>
+                    <a onclick="AddToCart('combo-pack',755,'images/chair combo.avif',20)"><img
+                            src="pic/icons8-shopping-cart-24.png"></a>
+                </h2>
+            </div>
+            <div class="rating-button">
+                <button href="signup.html" onclick="hi(755)">Buy Now</button>
+                <button class="ytt">rating⭐⭐</button>
+            </div>
+        </div>
+
+
+
+        <div class="cart-prt">
+
+            <div class="cart product">
+                <img src="images/table chair.avif" data-filter="combo-pack">
+                <h2>combo-pack
+                    <p>₹1355</p>
+                    <a onclick="AddToCart('combo-pack',1355,'images/table chair.avif',21)"><img
+                            src="pic/icons8-shopping-cart-24.png"></a>
+                </h2>
+            </div>
+            <div class="rating-button">
+                <button href="signup.html" onclick="hi(1355)">Buy Now</button>
+                <button class="ytt">rating⭐⭐⭐⭐</button>
+            </div>
+        </div>
+
+        <div class="cart-prt">
+
+            <div class="cart product">
+                <img src="images/design table.avif" data-filter="table">
+                <h2>table
+                    <p>₹1255</p>
+                    <a onclick="AddToCart('table',1255,'images/design table.avif',22)"><img
+                            src="pic/icons8-shopping-cart-24.png"></a>
+                </h2>
+            </div>
+            <div class="rating-button">
+                <button href="signup.html" onclick="hi(1255)">Buy Now</button>
+                <button class="ytt">rating⭐⭐⭐⭐</button>
+
+            </div>
+        </div>
+
+        <div class="cart-prt">
+
+            <div class="cart product">
+                <img src="images/design -2.avif" data-filter="chair">
+                <h2>chair
+                    <p>₹3955</p>
+                    <a onclick="AddToCart('chair',3955,'images/design -2.avif',23)"><img
+                            src="pic/icons8-shopping-cart-24.png"></a>
+                </h2>
+
+            </div>
+            <div class="rating-button">
+                <button href="signup.html" onclick="hi(3955)">Buy Now</button>
+                <button class="ytt">rating⭐⭐⭐⭐</button>
+            </div>
+        </div>
+
+        <div class="cart-prt">
+
+            <div class="cart product">
+                <img src="images/chair3.avif" data-filter="chair">
+                <h2>chair
+                    <p>₹355</p>
+                    <a onclick="AddToCart('chair',355,'images/chair3.avif',24)"><img
+                            src="pic/icons8-shopping-cart-24.png"></a>
+                </h2>
+            </div>
+            <div class="rating-button">
+                <button href="signup.html" onclick="hi(355)">Buy Now</button>
+                <button class="ytt">rating⭐⭐⭐⭐</button>
+            </div>
+        </div>
+        <div class="cart-prt">
+
+            <div class="cart product">
+                <img src="images/bookshelf.jfif" data-filter="chair">
+                <h2>Bookshelf
+                    <p>₹1355</p>
+                    <a onclick="AddToCart('bookshelf',1355,'images/bookshelf.jfif',25)"><img
+                            src="pic/icons8-shopping-cart-24.png"></a>
+                </h2>
+            </div>
+            <div class="rating-button">
+                <button href="signup.html" onclick="hi(1355)">Buy Now</button>
+                <button class="ytt">rating⭐⭐⭐⭐</button>
+            </div>
+        </div>
+
+
+        <div class="cart-prt">
+
+            <div class="cart product">
+                <img src="images/amirah.jfif" data-filter="chair">
+                <h2>Almirah
+                    <p>₹3355</p>
+                    <a onclick="AddToCart('Almirah',3355,'images/amirah.jfif',26)"><img
+                            src="pic/icons8-shopping-cart-24.png"></a>
+
+                </h2>
+            </div>
+            <div class="rating-button">
+                <button href="signup.html" onclick="hi(3355)">Buy Now</button>
+                <button class="ytt">rating⭐⭐⭐</button>
+            </div>
+        </div>
+        <div class="cart-prt">
+
+            <div class="cart product">
+                <img src="pic/furn1.jpg" data-filter="chair">
+                <h2>combo-pack
+                    <p>₹3355</p>
+                    <a onclick="AddToCart('combo-pack',3355,'pic/furn1.jpg',27)"><img
+                            src="pic/icons8-shopping-cart-24.png"></a>
+                </h2>
+            </div>
+            <div class="rating-button">
+                <button href="signup.html" onclick="hi(3355)">Buy Now</button>
+                <button class="ytt">rating⭐⭐⭐</button>
+            </div>
+        </div>
+
+        <div class="cart-prt">
+
+            <div class="cart product">
+                <img src="pic/product1.jpg" data-filter="combo-pack">
+                <h2>pot
+                    <p>₹755</p>
+                    <a onclick="AddToCart('pot',755,'pic/product1.jpg',28)"><img
+                            src="pic/icons8-shopping-cart-24.png"></a>
+
+                </h2>
+            </div>
+            <div class="rating-button">
+                <button href="signup.html" onclick="hi(755)">Buy Now</button>
+                <button class="ytt">rating⭐⭐</button>
+            </div>
+        </div>
+
+
+        <div class="cart-prt">
+
+            <div class="cart product">
+                <img src="pic/product2.jpg" data-filter="combo-pack">
+                <h2>lamp
+                    <p>₹755</p>
+                    <a onclick="AddToCart('lamp',755,'pic/product2.jpg',29)"><img
+                            src="pic/icons8-shopping-cart-24.png"></a>
+
+                </h2>
+            </div>
+            <div class="rating-button">
+                <button href="signup.html" onclick="hi(755)">Buy Now</button>
+                <button class="ytt">rating⭐⭐</button>
+            </div>
+        </div>
+
+
+
+        <div class="cart-prt">
+
+            <div class="cart product">
+                <img src="pic/product3.jpg" data-filter="combo-pack">
+                <h2>seat
+                    <p>₹755</p>
+                    <a onclick="AddToCart('seat',755,'pic/product3.jpg',30)"><img
+                            src="pic/icons8-shopping-cart-24.png"></a>
+
+                </h2>
+            </div>
+            <div class="rating-button">
+                <button href="signup.html" onclick="hi(755)">Buy Now</button>
+                <button class="ytt">rating⭐⭐</button>
+            </div>
+        </div>
+
+
+        <div class="cart-prt">
+
+            <div class="cart product">
+                <img src="pic/product4.jpg" data-filter="combo-pack">
+                <h2>cup-holder
+                    <p>₹755</p>
+                    <a onclick="AddToCart('cup-holder',755,'pic/product4.jpg',31)"><img
+                            src="pic/icons8-shopping-cart-24.png"></a>
+
+                </h2>
+            </div>
+            <div class="rating-button">
+                <button href="signup.html" onclick="hi(755)">Buy Now</button>
+                <button class="ytt">rating⭐⭐</button>
+            </div>
+        </div>
+
+
+        <div class="cart-prt">
+
+            <div class="cart product">
+                <img src="pic/product5.jpg" data-filter="combo-pack">
+                <h2>pot
+                    <p>₹755</p>
+                    <a onclick="AddToCart('pot',755,'pic/product1.jpg',32)"><img
+                            src="pic/icons8-shopping-cart-24.png"></a>
+
+                </h2>
+            </div>
+            <div class="rating-button">
+                <button href="signup.html" onclick="hi(755)">Buy Now</button>
+                <button class="ytt">rating⭐⭐</button>
+            </div>
+        </div>
+
+
+        <div class="cart-prt">
+
+            <div class="cart product">
+                <img src="pic/product6.jpg" data-filter="combo-pack">
+                <h2>sofa
+                    <p>₹2755</p>
+                    <a onclick="AddToCart('sofa',2755,'pic/product6.jpg',33)"><img
+                            src="pic/icons8-shopping-cart-24.png"></a>
+
+
+                </h2>
+            </div>
+            <div class="rating-button">
+                <button href="signup.html" onclick="hi(2755)">Buy Now</button>
+                <button class="ytt">rating⭐⭐</button>
+            </div>
+        </div>
+
+
+
+
+
+
+    </div>
+    <div class="color">
+        <div class="containerFluid">
+            <h2>Frequently Asked Questions(FAQs)</h2>
+            <div class="accordion">
+                <div class="icon"></div>
+                <h5>100,000 views - how much is it?</h5>
+            </div>
+            <div class="panel">
+                <p>
+                    The number of views equals the number of times the app loads on your website. As usual, 100,000
+                    views approximately
+                    equals 100,000 of visits to your site per month. But it still depends on each specific case and the
+                    numbers may differ.
+                    More details about views are here.
+
+                </p>
+            </div>
+
+            <div class="accordion">
+                <div class="icon"></div>
+                <h5>Do you offer support if I need help?</h5>
+            </div>
+            <div class="panel">
+                <p>
+                    Yes! High-quality customer support is extremely important for a quality product, that’s why we do
+                    our best to resolve
+                    any issues you may encounter.
+                    On pricing and shipping related issues you can contact customer support at hytest@hytest.fi or call
+                    +358-2-512-0900.
+
+
+                </p>
+            </div>
+
+            <div class="accordion">
+                <div class="icon"></div>
+                <h5>How can I order?
+                </h5>
+            </div>
+            <div class="panel">
+                <p>
+                    You can order easily using our online platform. When you find a product you need, you can add it to
+                    cart, login and
+                    go through the ordering process. After the order is ready, you will receive order summary to your
+                    email. Order summary
+                    will also be stored to your account.
+
+                </p>
+            </div>
+
+            <div class="accordion">
+                <div class="icon"></div>
+                <h5>Do I have to order online?</h5>
+            </div>
+            <div class="panel">
+                <p>
+                    You can also send your order to hytest@hytest.fi. You can also order using FAX (+358 2 512 0909) or
+                    by calling.
+                    Online ordering is preferred in most cases because by ordering online, you will save time, you will
+                    have easier payment
+                    process and all the information about the order will be accessible for you anytime. Also if you want
+                    to make same order
+                    later, you can use “reorder” feature.
+
+                </p>
+            </div>
+            <div class="accordion">
+                <div class="icon"></div>
+                <h5>how much to required by product to reach doorstep</h5>
+            </div>
+            <div class="panel">
+                <p>
+                    product will be deliverd with 5-7 working days .
+
+                </p>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="foooter-color">
+
+
+        <div class="bg-footer">
+            <div class="footer-flex">
+                <div class="footer1">
+                    <h2>furniture</h2>
+                    <section>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Laboriosam exercitationem eius labore commodi illum autem asperiores doloribus praesentium non
+                        ut.
+                    </section>
+                </div>
+                <div class="footer1">
+                    <h2>helpful links</h2>
+                    <li><a href="#">about us</a></li>
+                    <li><a href="#">our blog</a></li>
+                    <li><a href="#">visit site</a></li>
+                    <li><a href="#">contact us</a></li>
+                    <li><a href="#">apply a job</a></li>
+                </div>
+                <div class="footer1">
+                    <h2>shopping</h2>
+                    <li><a href="#">online cards</a></li>
+                    <li><a href="#">return policy</a></li>
+                    <li><a href="#">privacy policy</a></li>
+                    <li><a href="#">shipping</a></li>
+                    <li><a href="#">inventory</a></li>
+                </div>
+                <div class="footer1">
+                    <h2>payment method</h2>
+                    <section>
+                        select one of the most common ways to pay a money for our products.
+                    </section>
+                    <div class="footer-logo">
+                        <img src="pic/footer-logo.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="copy">
+                <section>
+                    copyright &copy; at 2021 by <span>web tutorial.</span>
+                </section>
+            </div>
+        </div>
+
+    </div>
+
+
+
+</body>
+<script>
+
+    function hi(price, t) {
+        alert(`purchase succesful of Rupees ${price} `);
+
+        Swal.fire(
+            'Congratulation!',
+            `Item Purchase worth rupees ${price}`,
+            `<img src="${t}">`,
+
+            'success',
+        );
+        setTimeout(() => {
+            window.location.href = "card.html";
+        }, 1900);
+    }
+
+    hamburger = document.querySelector(".hamburger");
+    console.log(hamburger)
+    hamburger.onclick = function () {
+        navBar = document.getElementById("hi")
+        navBar.classList.toggle("active");
+    }
+
+
+
+</script>
+<script src="card.js"></script>
+<script src="sweetalert.js"></script>
+
+
+</html>
